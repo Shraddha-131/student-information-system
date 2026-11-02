@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: student-information-system
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: student-information-system
+
+  template:
+    metadata:
+      labels:
+        app: student-information-system
+
+    spec:
+      containers:
+        - name: student-app
+          image: daisu11/student-information-system:v1             
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5000
