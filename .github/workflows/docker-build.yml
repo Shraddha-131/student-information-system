@@ -30,4 +30,4 @@ jobs:
           push: true
           tags: |
             daisu11/student-information-system:latest
-            daisu11/student-information-system:v1
+            daisu11/student-information-system:v2

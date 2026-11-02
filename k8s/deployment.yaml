@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: student-app
-          image: daisu11/student-information-system:v1             
+          image: daisu11/student-information-system:v2             
           imagePullPolicy: Always
 
           ports:
