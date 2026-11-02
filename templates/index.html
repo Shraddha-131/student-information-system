@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f7fb;
+            color: #222;
+        }
+        h1 { color: #174ea6; }
+        form, .student {
+            background: white;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+        }
+        input { width: 95%; }
+        button {
+            background: #174ea6;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information System</h1>
+
+    <h2>Add Student</h2>
+    <form action="/add" method="POST">
+        <input name="name" placeholder="Student name" required>
+        <input name="roll" placeholder="Roll number" required>
+        <input name="course" placeholder="Course" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Search Students</h2>
+    <form action="/" method="GET">
+        <input name="search" placeholder="Search by name or roll number"
+               value="{{ search }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Student Records</h2>
+    {% for student in students %}
+        <div class="student">
+            <strong>{{ student.name }}</strong><br>
+            Roll Number: {{ student.roll }}<br>
+            Course: {{ student.course }}
+        </div>
+    {% else %}
+        <p>No student records found.</p>
+    {% endfor %}
+</body>
+</html>
